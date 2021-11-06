@@ -1,13 +1,6 @@
 package Objects;
 
 import Interfuse.Factori;
-import Objects.Auto.SedanProduction;
-import Objects.Auto.Test2;
-import Objects.Auto.SUVProduction;
-
-import java.math.BigInteger;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class AutiFactory implements Factori {
 
@@ -19,28 +12,15 @@ public class AutiFactory implements Factori {
 
     private long numberOfWorkers;
 
-    private final BigInteger productionSalary;
-
-    private BigInteger amountOfMoney;
-
-    private boolean workIsGoing;
 
     public AutiFactory(SUVProduction production1, Test2 production2,
-                      long numberOfWorkers, BigInteger productionSalary,
-                      BigInteger amountOfMoney,boolean workIsGoing) {
+                      long numberOfWorkers) {
         this.suvProduction = production1;
 
         this.sedanProduction = production2;
 
         this.numberOfWorkers = numberOfWorkers;
 
-        this.productionSalary = productionSalary;
-
-        this.amountOfMoney = amountOfMoney;
-
-
-
-        this.workIsGoing = workIsGoing;
     }
 
     public String getBrand(){
@@ -53,42 +33,6 @@ public class AutiFactory implements Factori {
 
     public void setNumberOfWorkers(long numberOfWorkers) {
         this.numberOfWorkers = numberOfWorkers;
-    }
-
-    public BigInteger getProductionSalary() {
-        return productionSalary;
-    }
-
-    public BigInteger getAmountOfMoney() {
-        return amountOfMoney;
-    }
-
-    public void setAmountOfMoney(BigInteger amountOfMoney) {
-        this.amountOfMoney = amountOfMoney;
-    }
-
-    public boolean isWorkIsGoing() {
-        return workIsGoing;
-    }
-
-    public void setWorkIsGoing(boolean workIsGoing) {
-        this.workIsGoing = workIsGoing;
-    }
-
-    @Override
-    public void startWork(LocalTime now) {
-        if(now.equals(startTime) && !isWorkIsGoing()){
-            setWorkIsGoing(true);
-            System.out.println("All fall into place, factory work begins!");
-        }
-    }
-
-    @Override
-    public void finishWork(LocalTime now) {
-        if(now.equals(endTime) && isWorkIsGoing()){
-            setWorkIsGoing(false);
-            System.out.println("The factory work is over, good luck everyone. We hope it was a great day!");
-        }
     }
 
     @Override

@@ -1,4 +1,4 @@
-package Objects.Auto;
+package Objects;
 
 import Interfuse.Auto;
 

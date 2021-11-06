@@ -1,7 +1,7 @@
 package Interfuse;
 
-import Objects.Auto.Test2;
-import Objects.Auto.SedanProduction;
+import Objects.Test2;
+import Objects.SedanProduction;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

@@ -1,10 +1,8 @@
-package Objects.Auto;
+package Objects;
 
 import Interfuse.Production;
-import Objects.Auto.Test2;
 
 import java.math.BigInteger;
-import java.time.LocalTime;
 
 public class SedanProduction implements Production {
 
