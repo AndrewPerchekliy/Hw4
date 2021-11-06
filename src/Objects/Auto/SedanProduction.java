@@ -16,8 +16,6 @@ public class SedanProduction implements Production {
 
     private final int availabilityOfSpareParts;
 
-    private int numberOfSpareParts;
-
     private boolean workIsGoing;
 
     private BigInteger amountOfMoney;
@@ -44,8 +42,6 @@ public class SedanProduction implements Production {
 
         this.availabilityOfSpareParts = availabilityOfSpareParts;
 
-        this.numberOfSpareParts = numberOfSpareParts;
-
         this.workIsGoing = workIsGoing;
 
         this.amountOfMoney = amountOfMoney;
@@ -55,9 +51,6 @@ public class SedanProduction implements Production {
         return typeOfCar;
     }
 
-    public void setNumberOfSpareParts(int numberOfSpareParts) {
-        this.numberOfSpareParts = numberOfSpareParts;
-    }
 
     public boolean isWorkIsGoing() {
         return workIsGoing;
@@ -67,27 +60,11 @@ public class SedanProduction implements Production {
         this.workIsGoing = workIsGoing;
     }
 
-    @Override
-    public void startProduction(LocalTime now) {
-        if(now.equals(startTime) && !isWorkIsGoing()){
-            setWorkIsGoing(true);
-            System.out.println("All fall into place, work on Sedans begins!");
-        }
-    }
-
-    @Override
-    public void finishProduction(LocalTime now) {
-        if(now.equals(endTime) && isWorkIsGoing()){
-            setWorkIsGoing(false);
-            System.out.println("The work is over, good luck everyone. We hope it was a great day!");
-        }
-    }
 
     @Override
     public String toString() {
         return "Our production line includes two BMW Sedans: " +
                 "1) " + automaticTransmission.getVersion() + " with automatic transmission" +
-                "2) " + manualTransmission.getVersion() + " with manual transmission" +
-                "Our working day starts at " + startTime + " and ends at " + endTime + " o'clock";
+                "2) " + manualTransmission.getVersion() + " with manual transmission";
     }
 }
